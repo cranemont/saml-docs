@@ -2,14 +2,14 @@
 
 # Table of Contents
 
-[1. Introduction](#1-introduction)
-[2. Overview](#2-overview)
-   [1. Drivers of SAML Adoption](#21-drivers-of-saml-adoption)
-   [2. Documenation Roadmap](#22-documentation-roadmap)
-[3. High-Levl SAML Use Cases](#3-high-level-saml-use-cases)
-   [1. SAML Participants](#31-saml-participants)
-   [2. Web Single Sign-On Use Cases](#32-web-single-sign-on-use-case)
-   [3. Identity Federation Use Cases](#33-identity-federation-use-cases)
+1. [Introduction](#1-introduction)
+2. [Overview](#2-overview)
+   1. [Drivers of SAML Adoption](#21-drivers-of-saml-adoption)
+   2. [Documenation Roadmap](#22-documentation-roadmap)
+3. [High-Levl SAML Use Cases](#3-high-level-saml-use-cases)
+   1. [SAML Participants](#31-saml-participants)
+   2. [Web Single Sign-On Use Cases](#32-web-single-sign-on-use-case)
+   3. [Identity Federation Use Cases](#33-identity-federation-use-cases)
 4. SAML Architecture
    1. Basic Concepts
    2. Advanced Concepts
@@ -58,18 +58,16 @@ OASIS 보안 서비스 기술 위원회(SSTC)는 SAML 표준을 개발 및 유�
 ## 2.1. Drivers of SAML Adoption
 
 <details>
-    <summary>요약</summary>
-    <div markdown="1">
-
-    - SAML이 필요한 이유
-      - SSO
-        - 쿠키에 의존하는 SSO 솔루션들은 다른 도메인에서는 사용이 불가능함(브라우저 쿠키는 DNS 도메인 간에 전송되지 않기 때문). 이 문제를 해결하기 위해서 독점적인 방법들을 사용하여 멀티도메인 SSO(MDSSO)을 지원함. 그러나 비즈니스 파트너들의 환경이 각각 다르기 때문에 독점 프로토콜을 사용하는 것은 비현실적임. SAML은 공급업체에 독립적인 표준 문법과 프로토콜을 제공하여 이 문제를 해결함.
-      - 연합 ID
-        - 온라인 서비스들이 협업하여 서비스를 제공하려고 하는 경우에, 각 서비스 제공자는 서로의 사용자들에 대해서 공통으로 알고 있어야 함. SAML은 여러 서비스들이 공통의 사용자 ID(연합 ID)를 사용하도록 해서 ID 관리 비용을 줄이는 데 도움을 줄 수 있음.
-      - 다른 서비스/기관 표준에도 사용 가능
-        - SAML은 보안 어설션 형식을 "네이티브" SAML 기반 프로토콜 컨텍스트 외부에서 사용할 수 있도록 허용함. 예를 들어 SOAP 메시지 교환시 보안을 위해 사용하는 [WS-Security](https://www.ibm.com/docs/ko/integration-bus/10.0?topic=configuration-ws-security) 보안 토큰에 SAML 어설션을 사용하여 다른 토큰 방식보다 풍부한 속성들을 전달할 수 있음
-
-    </div>
+   <summary>요약</summary>
+   <div markdown="1">
+      <H2>SAML이 필요한 이유<H2/><p/>
+      <H3>SSO</H3><p/>
+         쿠키에 의존하는 SSO 솔루션들은 다른 도메인에서는 사용이 불가능함(브라우저 쿠키는 DNS 도메인 간에 전송되지 않기 때문). 이 문제를 해결하기 위해서 독점적인 방법들을 사용하여 멀티도메인 SSO(MDSSO)을 지원함. 그러나 비즈니스 파트너들의 환경이 각각 다르기 때문에 독점 프로토콜을 사용하는 것은 비현실적임. SAML은 공급업체에 독립적인 표준 문법과 프로토콜을 제공하여 이 문제를 해결함.
+      <p/><H3>연합 ID</H3><p/>
+         온라인 서비스들이 협업하여 서비스를 제공하려고 하는 경우에, 각 서비스 제공자는 서로의 사용자들에 대해서 공통으로 알고 있어야 함. SAML은 여러 서비스들이 공통의 사용자 ID(연합 ID)를 사용하도록 해서 ID 관리 비용을 줄이는 데 도움을 줄 수 있음.
+      <p/><H3>다른 서비스/기관 표준에도 사용 가능</H3><p/>
+         SAML은 보안 어설션 형식을 "네이티브" SAML 기반 프로토콜 컨텍스트 외부에서 사용할 수 있도록 허용함. 예를 들어 SOAP 메시지 교환시 보안을 위해 사용하는 <a href="https://www.ibm.com/docs/ko/integration-bus/10.0?topic=configuration-ws-security">WS-Security</a> 보안 토큰에 SAML 어설션을 사용하여 다른 토큰 방식보다 풍부한 속성들을 전달할 수 있음
+   </div>
 </details>
 
 보안 정보 교환에 SAML이 필요한 이유는 무엇인가요? SAML 표준을 채택하게 된 배경에는 다음과 같은 몇 가지 요인이 있습니다.
@@ -86,8 +84,12 @@ OASIS 보안 서비스 기술 위원회(SSTC)는 SAML 표준을 개발 및 유�
 OASIS SSTC는 SAML V2.0과 관련된 수많은 문서를 작성했습니다. 여기에는 공식 OASIS 표준 자체를 구성하는 문서, 대중이 SAML V2.0을 더 잘 이해할 수 있도록 돕기 위한 홍보 자료, 특정 환경에서의 사용을 용이하게 하거나 다른 기술과 통합하기 위한 SAML의 여러 확장 문서가 포함됩니다.
 
 SAML V2.0 OASIS 표준을 정의하고 지원하는 문서는 Figure 1에 나와 있습니다. 밝은 색 상자는 비규범적 정보를 나타냅니다.
+
+
 ![Figure 1: SAML V2.0 Document Set](http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0-cd-02_html_7077e985.gif)
+
 *Figure 1: SAML V2.0 Document Set*
+
 
 - **Conformance Requirements**는 제품 간 호환성의 한 척도이기 때문에 소프트웨어 공급업체가 일반적으로 중요하게 생각하는 상태인 SAML 적합성에 대한 기술 요구사항을 문서화합니다. 다른 문서에서 SAML V2.0을 공식적으로 참조해야 하는 경우 이 문서를 가리키기만 하면 됩니다.
 
@@ -142,8 +144,12 @@ identity provider의 일반적인 어설션은 "이 사용자는 신원 미상�
 ## 3.2. Web Single Sign-On Use Case
 
 멀티도메인 웹 싱글 사인온은 SAML이 적용되는 가장 중요한 사용 사례입니다. 이 사용 사례에서 사용자는 웹 사이트(airline.example.com)에서 로그인 세션(즉, ***security context***)을 가지고 있으며 해당 사이트의 리소스에 액세스하고 있습니다. 어느 시점에서 명시적으로 또는 투명하게 파트너의 웹 사이트(cars.example.co.uk)로 이동합니다. 이 경우, 두 사이트 간의 비즈니스 계약에 따라 이전에 airline.example.com과 cars.example.co.uk 간에 사용자에 대한 연합 ID 가 설정되었다고 가정합니다. ID 공급자(IdP) 사이트(airline.example.com)는 서비스 공급자(SP) 사이트(cars.example.co.uk)에 사용자가 알려져 있고(연합 ID 로 사용자를 참조하여), 인증을 받았으며, 특정 ID 속성(예: "골드 멤버십" 보유)을 가지고 있음을 주장합니다. cars.example.co.uk는 airline.example.com을 신뢰하므로 사용자가 유효하고 제대로 인증되었음을 신뢰하여 해당 사용자에 대한 로컬 세션을 만듭니다. 이 사용 사례는 Figure 2에 표시되어 있으며, 사용자가 cars.example.co.uk 사이트로 이동할 때 다시 인증할 필요가 없다는 사실을 보여줍니다.
+
+
 ![Figure 2](http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0-cd-02_html_5f15833f.gif)
+
 *Figure 2: General Single Sign-On Use case*
+
 
 이 high-level 설명은 사용자가 SP에서 보호된 리소스에 액세스하기 전에 먼저 IdP에서 인증했음을 나타냅니다. 이 시나리오를 일반적으로 *IdP-initiated web SSO* 시나리오라고 합니다. IdP-initiated SSO는 특정 경우에 유용하지만, 더 일반적인 시나리오는 사용자가 브라우저 북마크를 통해 SP 사이트를 방문하여 특별한 인증이나 권한 부여가 필요하지 않은 리소스에 먼저 액세스하는 것으로 시작됩니다. 이후 사용자가 SP에서 보호된 리소스에 접속하려고 시도할 때 SAML이 활성화된 deployment에서는 사용자가 로그인하도록 하기 위해 SP가 인증 요청과 함께 사용자를 IdP로 보냅니다. 따라서 이 시나리오를 *SP-initiated web SSO* 라고 합니다. 로그인이 완료되면 IdP는 보호된 리소스에 대한 사용자의 액세스 권한의 유효성을 검사하는 데 사용할 수 있는 어설션을 생성할 수 있습니다. SAML V2.0은 IdP-initiated 및 SP-initiated 플로우를 모두 지원합니다.
 
@@ -170,8 +176,11 @@ SAML은 다양한 유형과 강도의 사용자 인증 방법, 연합 ID를 표�
 
 Figure 3에 표시된 이 사용 사례는 웹 SSO 중에 사이트가 계정 연결 프로세스에 사용되는 연합 이름 식별자를 동적으로 설정하는 방법을 보여줍니다. 이 예에서는 하나의 identity provider인 airline.example.com과 두 개의 service provider인 렌터카에 대한 cars.example.co.uk 및 호텔 예약에 대한 hotels.example.ca가 존재합니다. 이 예에서는 사용자가 세 제공업체 사이트 모두에 등록되어 있지만(즉, 기존 로컬 로그인 계정이 있는 경우) 로컬 계정은 모두 다른 계정 식별자를 가지고 있다고 가정합니다. 사용자 John은 airline.example.com에서는 **johndoe**로 등록되어 있고, cars.example.co.uk에서는 계정이 **jdoe**이며, hotels.example.ca에서는 **johnd**입니다. 이 사이트들은 사용자의 연합 이름 식별자에 대해 ***persistent*** SAML privacy-preserving pseudonyms(가명)을 사용하기로 계약을 맺었습니다. John은 이전에 이러한 사이트 간에 자신의 ID를 연합한 적이 없습니다.
 
+
 ![Figure 3](http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0-cd-02_html_m7bc7a2ed.gif)
+   
 *Figure 3: General Identity Federation Use Case*
+
 
 처리 순서는 다음과 같습니다:
 
