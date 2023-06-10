@@ -69,6 +69,7 @@ OASIS 보안 서비스 기술 위원회(SSTC)는 SAML 표준을 개발 및 유�
          SAML은 보안 어설션 형식을 "네이티브" SAML 기반 프로토콜 컨텍스트 외부에서 사용할 수 있도록 허용함. 예를 들어 SOAP 메시지 교환시 보안을 위해 사용하는 <a href="https://www.ibm.com/docs/ko/integration-bus/10.0?topic=configuration-ws-security">WS-Security</a> 보안 토큰에 SAML 어설션을 사용하여 다른 토큰 방식보다 풍부한 속성들을 전달할 수 있음
    </div>
 </details>
+---
 
 보안 정보 교환에 SAML이 필요한 이유는 무엇인가요? SAML 표준을 채택하게 된 배경에는 다음과 같은 몇 가지 요인이 있습니다.
 
